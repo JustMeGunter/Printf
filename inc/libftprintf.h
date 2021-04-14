@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/10 19:32:05 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:53:51 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct		s_spf
 	int				zero;
 	int				left;
 	int				width;
-	int				cnt;
+	int				count;
 	int				negative;
 	int				h_p;
 	int				precision;

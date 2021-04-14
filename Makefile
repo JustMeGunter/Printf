@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/13 19:44:59 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/14 21:14:29 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ TIME				=	$(shell date +'%d/%m/%Y %H:%M:%S')
 MSG					=
 
 DIR_SRC				=	src/
-SRC					=	ft_printf.c\
+SRC					=	ft_printf.c h_prc_char.c width.c precision.c left.c\
+						empty.c star.c draw_width.c h_zero.c
 
 MAIN				=	main.c
 
