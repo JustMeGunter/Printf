@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:40:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/14 21:10:46 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:07:52 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-int				star(t_spf *subesp, va_list argp)
+int				star(t_spf *subesp, va_list ***argp)
 {
 	int		val;
 
@@ -20,7 +20,7 @@ int				star(t_spf *subesp, va_list argp)
 	if (*subesp->content == '*')
 	{
 		subesp->content++;
-		if ((val = va_arg(argp, int)) < 0)
+		if ((val = va_arg(***argp, int)) < 0)
 		{
 			subesp->left = 1;
 			val = -val;

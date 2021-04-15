@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/14 20:56:51 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:59:36 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ char	*get_esp(const char **format)
 {
 	char *aux;
 
-	aux = ft_substr(ft_strchr(*format, '%'), 1,
-			ft_strlen(*format) - 
+	aux = ft_substr(*format, 1, ft_strlen(*format) - 
 			ft_strlen(ft_strchrs(*format + 1, "%cdisxXpu")));
 	*format = *format + ft_strlen(aux);
 	return (aux);
@@ -33,7 +32,7 @@ void	h_trigger(const char **format, va_list argp, t_spf *esp)
 		esp->content = get_esp(format); 
 		t_end = ft_strchrs(esp->content, "%cdisxXpu");
 		if (*t_end == 'c' || *t_end == '%')
-			h_prc_char(esp, argp, *t_end);
+			h_prc_char(esp, &argp, *t_end);
 		//if (*t_end == 's')
 		//	h_string(esp, argp);
 		//if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||

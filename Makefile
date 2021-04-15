@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/14 21:14:29 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/15 19:40:20 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ magic:				$(OBJ)
 
 test:				re
 					$(CC) $(CFLAGS) -I Libft/inc/ -I inc/ -o $@ $(MAIN) $(NAME)
+
 Libft/libft.a:
 					$(MAKE) -C Libft
 
