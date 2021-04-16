@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:12:02 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/15 22:00:07 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:50:54 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void			h_prc_char(t_spf *esp, va_list *argp, char percent)
 
     i = -1;
 	left(esp);
-	width(esp, &argp);
+	width(esp, argp);
 	if (percent != '%')
 		character = va_arg(*argp, int);
 	else

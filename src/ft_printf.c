@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/15 21:59:36 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:39:10 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*get_esp(const char **format)
 	return (aux);
 }
 
-void	h_trigger(const char **format, va_list argp, t_spf *esp)
+void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 {
 	char	*t_end;
 
@@ -32,7 +32,7 @@ void	h_trigger(const char **format, va_list argp, t_spf *esp)
 		esp->content = get_esp(format); 
 		t_end = ft_strchrs(esp->content, "%cdisxXpu");
 		if (*t_end == 'c' || *t_end == '%')
-			h_prc_char(esp, &argp, *t_end);
+			h_prc_char(esp, argp, *t_end);
 		//if (*t_end == 's')
 		//	h_string(esp, argp);
 		//if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||
@@ -55,7 +55,7 @@ int	ft_printf(const char *format, ...)
 	va_start(argp, format);
 	while (*format)
 	{
-		h_trigger(&format, argp, esp);
+		h_trigger(&format, &argp, esp);
 		format++;
 	}
 	va_end(argp);
