@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/17 16:08:35 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/17 19:28:26 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,16 +228,28 @@ int        main(int argc, char *argv[])
     	n = ft_printf("a%7.5ib", 300);
     	printf("!!! %i !!!\n", n);
     	printf("******************\n");
-		printf("10 width 5 precision negative\n");
+		printf("10 width 5 precision\n");
     	n = printf("a%10.5ib", 300);
     	printf("!!! %i !!!\n", n);
     	n = ft_printf("a%10.5ib", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("5 width 5 precision\n");
+    	n = printf("a%5.5ib", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%5.5ib", 300);
     	printf("!!! %i !!!\n", n);
     	printf("******************\n");
 		printf("7 width 5 precision negative\n");
     	n = printf("a%7.5ib", -300);
     	printf("!!! %i !!!\n", n);
     	n = ft_printf("a%7.5ib", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("10 width 5 precision negative\n");
+    	n = printf("a%10.5ib", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%10.5ib", -300);
     	printf("!!! %i !!!\n", n);
     	printf("******************\n");
 		printf("-7 width 5 precision\n");
