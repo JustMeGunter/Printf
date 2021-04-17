@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/16 17:16:23 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:23:10 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBPRINRF_H
 # include <libft.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 # define ELM_BASE "0123456789abcdefghijklmnopqrstuvwxyz"
 # define ELM_BASE_UP "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -41,7 +42,7 @@ void			left(t_spf *subesp);
 void			draw_precision(t_spf *subesp);
 void			width(t_spf *subesp, va_list *argp);
 void			empty(t_spf *subesp);
-void            h_string(t_spf *subesp, va_list argp);
+void            h_string(t_spf *subesp, va_list *argp);
 int 	        star(t_spf *subesp, va_list *argp);
 void			h_zero(t_spf *subesp);
 void            is_negative(t_spf *subesp, char **nn);

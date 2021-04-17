@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/15 19:40:20 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/16 22:52:00 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MSG					=
 
 DIR_SRC				=	src/
 SRC					=	ft_printf.c h_prc_char.c width.c precision.c left.c\
-						empty.c star.c draw_width.c h_zero.c
+						empty.c star.c draw_width.c h_zero.c h_string.c
 
 MAIN				=	main.c
 
