@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/17 14:17:27 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:17:32 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ void            h_string(t_spf *subesp, va_list *argp);
 int 	        star(t_spf *subesp, va_list *argp);
 void			h_zero(t_spf *subesp);
 int				is_negative(t_spf *subesp, char **nn);
-char			*is_pnt_or_h(t_spf *subesp, long unsigned int n, char c);
+char			*is_pnt_or_h(t_spf *subesp, long long unsigned int n, char c);
 
 #endif

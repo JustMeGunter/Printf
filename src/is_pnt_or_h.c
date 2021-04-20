@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:00:02 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/03/21 14:25:24 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/19 22:17:10 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h>
 
-char			*is_pnt_or_h(t_spf *subesp, long unsigned int n, char c)
+char			*is_pnt_or_h(t_spf *subesp, long long unsigned int n, char c)
 {
 	char		*aux_ret;
 

@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/03/13 17:34:25 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/19 20:55:00 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h>
 
-char		*ft_itoa_base(long long int n,  int base, char *elm_base)
+char		*ft_itoa_base(long long unsigned int n,  int base, char *elm_base)
 {
 	unsigned long long int	nn;
 	char					*ret;

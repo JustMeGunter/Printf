@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/17 19:28:26 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:19:50 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,6 +264,147 @@ int        main(int argc, char *argv[])
     	n = ft_printf("a%-7.5ib", -300);
     	printf("!!! %i !!!\n", n);
     	printf("******************\n");
+	}
+	if (ft_strnstr(argv[1], "MIXI", 10))
+	{
+    	printf("******************\n");
+		printf("MIX\n");
+    	n = printf("ab%iab%5iab%7.5iab%*.*iab%*.*i", 300, 300, 300, 7, 5, 300, -7, 5, 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("ab%iab%5iab%7.5iab%*.*iab%*.*i", 300, 300, 300, 7, 5, 300, -7, 5, 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+	}
+	if (*argv[1] == 'd')
+	{
+    	printf("******************\n");
+		printf("Decimal\n");
+    	n = printf("a%db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("5 width\n");
+    	n = printf("a%5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("-5 width\n");
+    	n = printf("a%-5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%-5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("Integer negative\n");
+    	n = printf("a%db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("5 width negative\n");
+    	n = printf("a%5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("-5 width negative\n");
+    	n = printf("a%-5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%-5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("5 precision\n");
+    	n = printf("a%.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("7 width 5 precision\n");
+    	n = printf("a%7.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%7.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("10 width 5 precision\n");
+    	n = printf("a%10.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%10.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("5 width 5 precision\n");
+    	n = printf("a%5.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%5.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("7 width 5 precision negative\n");
+    	n = printf("a%7.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%7.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("10 width 5 precision negative\n");
+    	n = printf("a%10.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%10.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("-7 width 5 precision\n");
+    	n = printf("a%-7.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%-7.5db", 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("-7 width 5 precision negative\n");
+    	n = printf("a%-7.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("a%-7.5db", -300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+	}
+	if (ft_strnstr(argv[1], "MIXD", 10))
+	{
+    	printf("******************\n");
+		printf("MIX\n");
+    	n = printf("ab%dab%5dab%7.5dab%*.*dab%*.*d", 300, 300, 300, 7, 5, 300, -7, 5, 300);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("ab%dab%5dab%7.5dab%*.*dab%*.*d", 300, 300, 300, 7, 5, 300, -7, 5, 300);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+	}
+	if (*argv[1] == 'p')
+	{
+		int a = 1;
+    	printf("******************\n");
+		printf("Pointers\n");
+    	n = printf("%p", &a);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("%p", &a);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("15 Width\n");
+    	n = printf("%15p", &a);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("%15p", &a);
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("10 Width Star\n");
+    	n = printf("%*p", 30, &a);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("%*p", 30, &a);
+    	printf("!!! %i !!!\n", n);
+	}
+	if (ft_strnstr(argv[1], "MIXP", 10))
+	{
+		int c = 1;
+		int b = 2;
+    	printf("******************\n");
+		printf("MIXP\n");
+    	n = printf("%*p, %paa%15p", 30, &c, &b, &c);
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("%*p, %paa%15p", 30, &c, &b, &c);
+    	printf("!!! %i !!!\n", n);
 	}
     return (0);
 }
