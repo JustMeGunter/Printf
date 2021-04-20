@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:12:02 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/16 17:50:54 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/20 20:34:17 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void			h_prc_char(t_spf *esp, va_list *argp, char percent)
 	else
 		 character = percent;
 	esp->sublen = 1;
-	if (!esp->left && percent != '%')
+	if (!esp->left)
 		while (esp->width-- > esp->sublen)
 			draw_width(esp);
 	esp->count += write(1, &character, 1);
-	if (esp->left && percent != '%')
+	if (esp->left)
 		while (esp->width-- > esp->sublen)
 			draw_width(esp);
 	empty(esp);

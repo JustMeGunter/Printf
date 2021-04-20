@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/20 19:19:50 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/20 20:21:53 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ int        main(int argc, char *argv[])
     	n = printf("abcdef%2.2%c12345\n");
     	printf("!!! %i !!!\n", n);
     	n = ft_printf("abcdef%2.2%c12345\n");
+    	printf("!!! %i !!!\n", n);
+    	printf("******************\n");
+		printf("percent\n");
+    	n = printf("abcdef%5%c12345\n");
+    	printf("!!! %i !!!\n", n);
+    	n = ft_printf("abcdef%5%c12345\n");
     	printf("!!! %i !!!\n", n);
     	printf("******************\n");
 	}
