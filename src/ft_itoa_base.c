@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 18:14:11 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/21 18:44:52 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_itoa_base(long long unsigned int n,  int base, char *elm_base)
 {
-	unsigned long long int	nn;
+	long long int	nn;
 	char					*ret;
 	int						i;
 
