@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/19 20:55:00 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/21 17:27:31 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ char		*ft_itoa_base(long long unsigned int n,  int base, char *elm_base)
 		ret[--i] = elm_base[nn % base];
 		nn = nn / base;
 	}
+	if (nn == 0)
+		*ret = '0';
 	return(ret);
 }
