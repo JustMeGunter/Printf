@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 19:48:21 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/21 20:04:41 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void			h_any_n(t_spf *esp, va_list *argp, char c)
 		esp->count += write(1, "-", 1);
 	if (!esp->left)
 	{
-		//if (esp->width > esp->sublen && esp->width > esp->precision && esp->precision && *nn != '-')
-		//	draw_width(esp);
+		if (esp->width > esp->sublen && esp->width > esp->precision && esp->precision && *nn != '-' && esp->sublen < esp->precision)
+			draw_width(esp);
 		while (esp->width-- > esp->sublen && esp->width > esp->precision)
 			draw_width(esp);
 	}
