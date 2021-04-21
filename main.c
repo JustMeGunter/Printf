@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 15:27:18 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/21 15:56:00 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ int        main(int argc, char *argv[])
 		return (0);
 	if (*argv[1] == 't')
 	{
+		static char *s_hidden = "hi \0 lolololo \0";
     	printf("******************\n");
 		printf("Test\n");
-    	n = printf("hello, %s\n", NULL);
+    	n = printf("hello, %3.s<\n", s_hidden);
     	printf("!!! %i !!!\n", n);
-    	n = ft_printf("hello, %s\n", NULL);
+    	n = ft_printf("hello, %3.s<\n", s_hidden);
     	printf("!!! %i !!!\n", n);
 	}
 	if (*argv[1] == '%')
