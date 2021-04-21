@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/17 14:04:13 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/21 15:03:34 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ CC					= 	clang
 
 RM					= 	rm -f
 
-CFLAGS				= 	-Wall -Wextra -Werror -g 
+//CFLAGS				= 	-Wall -Wextra -Werror -g 
+CFLAGS				= 	-g 
 
 %.o:		 		$(DIR_SRC)/%.c
 					$(CC) $(CFLAGS) -I $(DIR_INC) -I Libft/inc/ -c $< -o $(DIR_OBJ)$@ 
