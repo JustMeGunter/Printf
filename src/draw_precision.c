@@ -6,18 +6,18 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:43:29 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/03/20 20:55:55 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/22 20:18:11 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h>
 
-void			draw_precision(t_spf *subesp)
+void			draw_precision(t_spf *esp)
 {
-	if (subesp->zero || (subesp->width && subesp->precision))
-		subesp->count += write(1, "0", 1);
+	if (esp->zero || (esp->width && esp->precision))
+		esp->count += write(1, "0", 1);
 	else
-		subesp->count += write(1, " ", 1);
-	if (subesp->left && subesp->width)
-		subesp->width--;
+		esp->count += write(1, " ", 1);
+	if (esp->left && esp->width)
+		esp->width--;
 }

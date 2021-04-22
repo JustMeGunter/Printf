@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 20:04:41 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/22 20:13:05 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void			h_any_n(t_spf *esp, va_list *argp, char c)
 		draw_precision(esp);
 	if (c == 'p')
 		esp->count += write(1, "0x", 2);
-	while (nn[++i] )
+	while (nn[++i] && (nn[i] != '0' && esp->precision != 0))
 		esp->count += write(1, &nn[i], 1);
 	if (esp->left)
 		while (esp->width-- > esp->sublen && esp->width > esp->precision)
