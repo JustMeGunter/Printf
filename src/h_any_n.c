@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/23 16:29:35 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:43:51 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void			h_any_n(t_spf *esp, va_list *argp, char c)
 	else
 		nn = is_pnt_or_h(esp, va_arg(*argp, size_t), c);
 	esp->sublen = ft_strlen(nn);
-	if (esp->sublen == 1 && *nn == '0' && esp->h_p && esp->width == 0)
+	if (esp->sublen == 1 && *nn == '0' && esp->precision == 0 && esp->width == 0 && esp->h_p)
 		*nn = '\0';
-	else if (esp->sublen == 1 && *nn == '0' && esp->h_p)
+	else if (esp->sublen == 1 && *nn == '0' && esp->h_p && esp->precision == 0)
 		*nn = ' ';
 	if (is_negative(esp, &nn) && !esp->h_p && esp->zero && esp->negative--)
 		esp->count += write(1, "-", 1);
