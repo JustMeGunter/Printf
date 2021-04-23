@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/19 22:17:32 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/23 19:47:10 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_spf
 	int				h_p;
 	int				precision;
 	int				sublen; 
+	int				n_p;
 }					t_spf;
 
 void			precision(t_spf *subesp, va_list *argp);
