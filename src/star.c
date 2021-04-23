@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:40:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/23 19:50:11 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/23 19:59:48 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int				star(t_spf *subesp, va_list *argp)
 	int		val;
 
 	h_zero(subesp);
+	is_negative(subesp, &subesp->content);
 	if (*subesp->content == '*')
 	{
 		subesp->content++;
