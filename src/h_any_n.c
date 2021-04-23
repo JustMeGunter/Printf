@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/23 16:43:51 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/23 17:19:11 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ void			h_any_n(t_spf *esp, va_list *argp, char c)
 	left(esp);
 	width(esp, argp);
 	precision(esp, argp);
-	if (c == 'i' || c == 'd' || c == 'u')
+	if (c == 'i' || c == 'd')
 		nn = ft_itoa(va_arg(*argp, int));
+	else if (c == 'u')
+		nn = ft_itoa(va_arg(*argp, unsigned int));
 	else
 		nn = is_pnt_or_h(esp, va_arg(*argp, size_t), c);
 	esp->sublen = ft_strlen(nn);

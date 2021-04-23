@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/23 16:47:59 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:57:17 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,9 @@ int        main(int argc, char *argv[])
 		static char *s_hidden = "hi \0 lolololo \0";
     	printf("******************\n");
 		printf("Test\n");
-    	n = printf("%daa\n", 0);
+    	n = printf("%u\n", 4294967295);
     	printf("!!! %i !!!\n", n);
-    	n = ft_printf("%daa\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = printf("%.0d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = ft_printf("%.0d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = printf("%5.0d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = ft_printf("%5.0d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = printf("%.3d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = ft_printf("%.3d\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = printf("%0-8.5u\n", 0);
-    	printf("!!! %i !!!\n", n);
-    	n = ft_printf("%0-8.5u\n", 0);
+    	n = ft_printf("%u\n", 4294967295);
     	printf("!!! %i !!!\n", n);
 	}
 	if (*argv[1] == '%')
