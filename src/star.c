@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:40:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/23 19:59:48 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/24 14:56:08 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,24 @@ int				star(t_spf *subesp, va_list *argp)
 	if (*subesp->content == '*')
 	{
 		subesp->content++;
-		if ((val = va_arg(*argp, int)) < 0)
+		if ((val = va_arg(*argp, int)) < 0 && !subesp->h_w)
 		{
 			subesp->left = 1;
 			val = -val;
 			subesp->negative = 1;
 		}
+		else if (val < 0 && subesp->h_w)
+		{
+			val = -val;
+			subesp->negative = 1;
+		}
 		if (!subesp->width && !subesp->h_p)
+		{
+			subesp->h_w = 1;
 			subesp->width = val;
+			if (!subesp->width)
+				subesp->zero = 1;
+		}
 		else if (subesp->negative)
 		{
 			subesp->precision = 0;
@@ -38,6 +48,7 @@ int				star(t_spf *subesp, va_list *argp)
 		{
 			subesp->precision = val;
 			subesp->n_p = 0;
+			subesp->h_p = 1;
 		}
 		subesp->negative = 0;
 		return (1);
