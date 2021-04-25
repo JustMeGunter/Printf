@@ -18,8 +18,8 @@ void			empty(t_spf *subesp)
 	subesp->zero = 0;
 	subesp->width = 0;
 	subesp->h_p = 0;
-	subesp->precision = 0;
-	subesp->sublen = 0;
+	subesp->prcn = 0;
+	subesp->len = 0;
 	subesp->negative = 0;
 	subesp->h_w = 0;
 	subesp->n_p = 0;

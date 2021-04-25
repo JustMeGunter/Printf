@@ -18,8 +18,8 @@ int	is_negative(t_spf *esp, char **nn)
 	{
         (*nn)++;
 		esp->negative = 1;
-        if (esp->precision)
-			esp->precision++;
+        if (esp->prcn)
+			esp->prcn++;
 		return (1);
 	}
 	return (0);

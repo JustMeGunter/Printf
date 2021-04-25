@@ -14,9 +14,9 @@
 
 void			h_zero(t_spf *subesp)
 {
-	if (*subesp->content == '0')
+	if (*subesp->cnt == '0')
 	{
-		subesp->content++;
+		subesp->cnt++;
 		subesp->zero = 1;
 	}
 }

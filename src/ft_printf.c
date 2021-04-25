@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/24 23:58:46 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/25 17:59:40 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,25 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 
 	if (**format == '%')
 	{
-		esp->content = get_esp(format); 
-		if (!esp->content && write(1, "0", 1))
+		esp->cnt = get_esp(format); 
+		left(esp);
+		width(esp, argp);
+		precision(esp, argp);
+		if (!esp->cnt && write(1, "0", 1))
 			return ;
-		t_end = ft_strchrs(esp->content, "%cdisxXpu");
+		t_end = ft_strchrs(esp->cnt, "%cdisxXpu");
 		if (*t_end == 'c' || *t_end == '%')
 			h_prc_char(esp, argp, *t_end);
 		else if (*t_end == 's')
 			h_string(esp, argp);
-		else if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||
-				*t_end == 'u' || *t_end == 'p')
-			h_any_n(esp, argp, *t_end);
-		else
-			write (1, "not implemented!", 16);
+	//	else if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||
+	//			*t_end == 'u' || *t_end == 'p')
+	//		h_any_n(esp, argp, *t_end);
 	}
 	else
 		esp->count += write(1, *format, 1);
-
 }
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	argp;

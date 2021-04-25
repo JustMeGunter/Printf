@@ -27,35 +27,35 @@ void			h_any_n(t_spf *esp, va_list *argp, char c)
 		nn = ft_itoa(va_arg(*argp, unsigned int));
 	else
 		nn = is_pnt_or_h(esp, va_arg(*argp, size_t), c);
-	esp->sublen = ft_strlen(nn);
-	if (esp->sublen == 1 && *nn == '0' && esp->precision == 0 && esp->width == 0 && esp->h_p && !esp->n_p)
+	esp->len = ft_strlen(nn);
+	if (esp->len == 1 && *nn == '0' && esp->prcn == 0 && esp->width == 0 && esp->h_p && !esp->n_p)
 		*nn = '\0';
-	else if (esp->sublen == 1 && *nn == '0' && esp->h_p && esp->precision == 0 && !esp->n_p)
+	else if (esp->len == 1 && *nn == '0' && esp->h_p && esp->prcn == 0 && !esp->n_p)
 		*nn = ' ';
 	if (is_negative(esp, &nn) && !esp->h_p && esp->zero && esp->negative--)
 		esp->count += write(1, "-", 1);
 	if (!esp->left)
 	{
-		if (esp->width > esp->sublen && esp->width > esp->precision && esp->precision && *nn != '-' && esp->sublen < esp->precision)
+		if (esp->width > esp->len && esp->width > esp->prcn && esp->prcn && *nn != '-' && esp->len < esp->prcn)
 			draw_width(esp);
-		while (esp->width-- > esp->sublen && esp->width > esp->precision)
+		while (esp->width-- > esp->len && esp->width > esp->prcn)
 			draw_width(esp);
-		if (esp->sublen == esp->precision && esp->width == esp->sublen)
+		if (esp->len == esp->prcn && esp->width == esp->len)
 			draw_width(esp);
 	}
 	if (esp->negative)
 		esp->count += write(1, "-", 1);
-	while (esp->precision-- > esp->sublen && esp->precision > 0)
+	while (esp->prcn-- > esp->len && esp->prcn > 0)
 		draw_precision(esp);
 	if (c == 'p')
 		esp->count += write(1, "0x", 2);
-	if (esp->sublen > 0)
+	if (esp->len > 0)
 		while (nn[++i])
 			esp->count += write(1, &nn[i], 1);
 	else
 		esp->count += write(1, " ", 1);
 	if (esp->left)
-		while (esp->width-- > esp->sublen && esp->width > esp->precision)
+		while (esp->width-- > esp->len && esp->width > esp->prcn)
 			draw_width(esp);
 	empty(esp);
 }

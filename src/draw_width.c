@@ -14,7 +14,7 @@
 
 void			draw_width(t_spf *subesp)
 {
-	if (subesp->zero && !subesp->precision && !subesp->left)
+	if (subesp->zero && !subesp->prcn && !subesp->left)
 		subesp->count += write(1, "0", 1);
 	else
 		subesp->count += write(1, " ", 1);

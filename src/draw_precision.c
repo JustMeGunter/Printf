@@ -14,7 +14,7 @@
 
 void			draw_precision(t_spf *esp)
 {
-	if ((esp->zero  || (esp->width && esp->precision) || esp->h_p) && !esp->n_p)
+	if ((esp->zero  || (esp->width && esp->prcn) || esp->h_p) && !esp->n_p)
 	{
 		esp->count += write(1, "0", 1);
 		esp->zero = 1;

@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:01:30 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/24 16:18:32 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/25 20:46:18 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void			precision(t_spf *esp, va_list *argp)
 {
-	if (*esp->content == '.')
+	if (*esp->cnt == '.')
 	{
-		h_zero(esp);
 		esp->h_p = 1;
-		esp->content++;
+		esp->cnt++;
 		if (!star(esp, argp))
 		{
-			esp->precision = ft_atoi((const char *)esp->content);
-			if (esp->precision)
-				while (*esp->content >= '0' && *esp->content <= '9')
-					esp->content++;
+			esp->prcn = ft_atoi((const char *)esp->cnt);
+			if (esp->prcn)
+				while (*esp->cnt >= '0' && *esp->cnt <= '9')
+					esp->cnt++;
 		}
-		if (esp->precision == 0 && !esp->n_p)
-			esp->zero = 0;
+		//Evaluar aqui el numero
 	}
 }

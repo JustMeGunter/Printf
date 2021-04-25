@@ -15,9 +15,9 @@
 void			left(t_spf *subesp)
 {
 	h_zero(subesp);
-	if (*subesp->content == '-')
+	if (*subesp->cnt == '-')
 	{
-		subesp->content++;
+		subesp->cnt++;
 		subesp->left = 1;
 	}
 }

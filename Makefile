@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/25 00:01:33 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/25 20:55:20 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ HEADER				= 	inc/libftprintf.h
 
 NAME				= 	libftprintf.a
 
-CC					=	clang	
+CC					=	gcc	
 
 RM					= 	rm -f
 
