@@ -6,18 +6,18 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:59:31 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 20:48:58 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/25 21:50:00 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			left(t_spf *subesp)
+void			left(t_spf *esp)
 {
-	h_zero(subesp);
-	if (*subesp->cnt == '-')
+	h_zero(esp);
+	if (*esp->cnt == '-')
 	{
-		subesp->cnt++;
-		subesp->left = 1;
+		esp->cnt++;
+		esp->left = 1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 17:59:40 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/25 21:50:32 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 	if (**format == '%')
 	{
 		esp->cnt = get_esp(format); 
-		left(esp);
+		//left dentro de width
 		width(esp, argp);
 		precision(esp, argp);
 		if (!esp->cnt && write(1, "0", 1))
@@ -53,7 +53,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 int	ft_printf(const char *format, ...)
 {
 	va_list	argp;
-	t_spf	*esp;
+http://www.cplusplus.com/reference/cstdio/printf/	t_spf	*esp;
 	int		cnt;
 
 	esp = (t_spf *)ft_calloc(1, sizeof(t_spf));
