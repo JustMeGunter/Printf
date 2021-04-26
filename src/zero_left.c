@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   h_zero.c                                           :+:      :+:    :+:   */
+/*   zero_left.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 17:02:53 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 21:50:12 by acrucesp         ###   ########.fr       */
+/*   Created: 2021/04/26 17:41:41 by acrucesp          #+#    #+#             */
+/*   Updated: 2021/04/26 18:48:45 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libftprintf.h> 
+#include <libftprintf.h>
 
-void			h_zero(t_spf *subesp)
+void	zero_left(t_spf *esp)
 {
-	if (*subesp->cnt == '0')
+	while (*esp->cnt == '0' || *esp->cnt == '-')
 	{
-		subesp->cnt++;
-		subesp->zero = 1;
+		if (*esp->cnt == '0')
+			esp->zero = 1;
+		if (*esp->cnt == '-')
+			esp->left = 1;
+		if (esp->zero == 1 && esp->left == 1)
+			esp->zero = 0;
+		esp->cnt++;
 	}
 }

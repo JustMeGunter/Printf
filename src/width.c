@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:00:37 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 21:49:53 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/26 18:48:05 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void			width(t_spf *esp, va_list *argp)
 {
-	h_zero(esp);
 	esp->width = star(esp, argp);
 	if (!esp->h_w)
 	{
@@ -23,7 +22,9 @@ void			width(t_spf *esp, va_list *argp)
 			while (*esp->cnt >= '0' && *esp->cnt <= '9')
 				esp->cnt++;
 	}
-	//Evaluar aqui el numero
-	if (esp->width > 0)
-		esp->h
+	if (esp->width < 0)
+	{
+		esp->left = 1;
+		esp->width = -esp->width;
+	}
 }

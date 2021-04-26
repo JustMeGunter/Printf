@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 21:50:32 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/26 18:48:49 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 	if (**format == '%')
 	{
 		esp->cnt = get_esp(format); 
-		//left dentro de width
+		zero_left(esp);
 		width(esp, argp);
 		precision(esp, argp);
 		if (!esp->cnt && write(1, "0", 1))
@@ -40,8 +40,8 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 		t_end = ft_strchrs(esp->cnt, "%cdisxXpu");
 		if (*t_end == 'c' || *t_end == '%')
 			h_prc_char(esp, argp, *t_end);
-		else if (*t_end == 's')
-			h_string(esp, argp);
+		//else if (*t_end == 's')
+		//	h_string(esp, argp);
 	//	else if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||
 	//			*t_end == 'u' || *t_end == 'p')
 	//		h_any_n(esp, argp, *t_end);
@@ -53,7 +53,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 int	ft_printf(const char *format, ...)
 {
 	va_list	argp;
-http://www.cplusplus.com/reference/cstdio/printf/	t_spf	*esp;
+	t_spf	*esp;
 	int		cnt;
 
 	esp = (t_spf *)ft_calloc(1, sizeof(t_spf));

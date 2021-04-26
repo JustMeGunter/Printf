@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:01:30 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 21:50:03 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/26 18:48:01 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void			precision(t_spf *esp, va_list *argp)
 {
 	if (*esp->cnt == '.')
 	{
+		esp->h_p = 1;
 		esp->cnt++;
 		esp->prcn = star(esp, argp);
 		if (!esp->prcn)
