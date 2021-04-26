@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   star.c                                             :+:      :+:    :+:   */
+/*   is_negative.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 12:40:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/26 20:55:48 by acrucesp         ###   ########.fr       */
+/*   Created: 2021/04/26 20:02:11 by acrucesp          #+#    #+#             */
+/*   Updated: 2021/04/26 20:55:55 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libftprintf.h> 
+#include <libftprintf.h>
 
-int				star(t_spf *esp, va_list *argp)
+int	is_negative(t_spf *esp, char **nn)
 {
-	if (*esp->cnt == '*')
+	if (**nn == '-')
 	{
-		esp->cnt++;
-		if (!esp->h_p)
-			esp->h_w = 1;
-		return (va_arg(*argp, int));
+		esp->negative = 1;
+		(*nn)++;
+		return (1);
 	}
-	return (0);
+	else
+		return (0);
 }
