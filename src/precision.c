@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:01:30 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/26 18:48:01 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/26 19:22:19 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void			precision(t_spf *esp, va_list *argp)
 				while (*esp->cnt >= '0' && *esp->cnt <= '9')
 					esp->cnt++;
 		}
-		//Evaluar negativo y 0
+		if (esp->prcn < 0)
+		{
+			esp->n_p = 1;
+			esp->prcn = -esp->prcn;
+		}
 	}
 	else
 		esp->h_p = 0;

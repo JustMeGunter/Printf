@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:36:31 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 17:57:17 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/26 19:30:57 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void            h_string(t_spf *esp, va_list *argp)
 		while (esp->width-- > esp->len)
 			draw_width(esp);
 	if (!esp->h_p || esp->prcn != 0 || esp->n_p)
-		while (str[++i] && (i < esp->prcn || esp->prcn == 0))
+		while (str[++i] && (i < esp->prcn || esp->prcn == 0 || esp->n_p))
 			esp->count += write(1, &str[i], 1);
 	if (esp->left)
 		while (esp->width-- > esp->len)
