@@ -6,16 +6,16 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:45:17 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/24 17:50:21 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/27 15:19:59 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			draw_width(t_spf *subesp)
+void			draw_width(t_spf *esp)
 {
-	if (subesp->zero && !subesp->prcn && !subesp->left)
-		subesp->count += write(1, "0", 1);
+	if (esp->zero && !esp->prcn && !esp->left)
+		esp->count += write(1, "0", 1);
 	else
-		subesp->count += write(1, " ", 1);
+		esp->count += write(1, " ", 1);
 }
