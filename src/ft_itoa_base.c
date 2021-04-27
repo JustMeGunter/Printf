@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 20:49:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/21 18:44:52 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/27 21:23:46 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char		*ft_itoa_base(long long unsigned int n,  int base, char *elm_base)
 		nn = n;
 	if (nn == 0)
 		nn = -1;
-	ret = malloc(sizeof(char) * i + 1);
+	ret = ft_calloc(sizeof(char), i + 1);
 	*(ret + i)  = '\0';
 	while (nn > 0)
 	{
