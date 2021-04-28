@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 16:18:56 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 21:31:27 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int        main(int argc, char *argv[])
 	{
 		static char *s_hidden = "hi \0 lolololo \0";
     	printf("******************\n");
-		printf("%\\n");
-		ft_printf("%\\n");
+		printf("%#x\n", 0);
+		ft_printf("%#x\n", 0);
 	}
 	if (*argv[1] == '%')
 	{

@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/26 20:09:47 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/28 21:12:15 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC					=	ft_printf.c h_prc_char.c width.c precision.c zero_left.c\
 						empty.c star.c draw_width.c  h_string.c h_any_n.c\
 						is_pnt_or_h.c draw_precision.c ft_itoa_base.c is_negative.c
 
-MAIN				=	main.c
+BMAIN				=	bigMain.c
+TMAIN				=	testMain.c	
 
 OBJ_DIR				=	obj/
 OBJ					= 	$(addprefix $(OBJ_DIR), $(SRC:%.c=%.o))
@@ -48,7 +49,9 @@ $(NAME):			Libft/libft.a $(OBJ)
 	ar rcs $(NAME) $(OBJ) Libft/obj/*.o 
 
 test:				re
-	$(CC) $(CFLAGS) -I Libft/inc/ -I inc/ -o $@ $(MAIN) $(NAME)
+	$(CC) $(CFLAGS) -I Libft/inc/ -I inc/ -o $@ $(TMAIN) $(NAME)
+big:				re
+	$(CC) $(CFLAGS) -I Libft/inc/ -I inc/ -o $@ $(BMAIN) $(NAME)
 
 Libft/libft.a:
 	$(MAKE) -C Libft

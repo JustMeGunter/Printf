@@ -6,21 +6,24 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:02:13 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/27 20:26:07 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 21:34:17 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			empty(t_spf *subesp)
+void			empty(t_spf *esp)
 {
-	subesp->left = 0;
-	subesp->zero = 0;
-	subesp->width = 0;
-	subesp->h_p = 0;
-	subesp->prcn = 0;
-	subesp->len = 0;
-	subesp->h_w = 0;
-	subesp->n_p = 0;
-	subesp->negative = 0;
+	esp->left = 0;
+	esp->zero = 0;
+	esp->width = 0;
+	esp->h_p = 0;
+	esp->prcn = 0;
+	esp->len = 0;
+	esp->h_w = 0;
+	esp->n_p = 0;
+	esp->negative = 0;
+	esp->space = 0;
+	esp->plus = 0;
+	esp->hash = 0;
 }

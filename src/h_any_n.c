@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 16:39:00 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 21:41:38 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	h_any_n(t_spf *esp, va_list *argp, char c)
 	manage_width(esp, 0);
 	if (esp->negative)
 		esp->count += write(1, "-", 1);
+	if (!(esp->len == 1 && *nn == '0') && esp->hash && (c == 'x' || c == 'X'))
+		esp->count += write(1, "0x", 2);
 	manage_precision(esp);
 	if (c == 'p')
 		esp->count += write(1, "0x", 2);
