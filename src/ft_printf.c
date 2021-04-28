@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/26 20:55:47 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 16:21:08 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 	if (**format == '%')
 	{
 		esp->cnt = get_esp(format); 
-		zero_left(esp);
-		width(esp, argp);
-		precision(esp, argp);
+		if (esp->cnt)
+		{
+			zero_left(esp);
+			width(esp, argp);
+			precision(esp, argp);
+		}
 		if (!esp->cnt && write(1, "0", 1))
 			return ;
 		t_end = ft_strchrs(esp->cnt, "%cdisxXpu");

@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 17:41:41 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/26 20:55:50 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 16:18:22 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	zero_left(t_spf *esp)
 {
-	while (*esp->cnt == '0' || *esp->cnt == '-')
+	while ((*esp->cnt == '0' || *esp->cnt == '-') && esp->cnt)
 	{
 		if (*esp->cnt == '0')
 			esp->zero = 1;

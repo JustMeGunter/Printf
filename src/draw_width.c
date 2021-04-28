@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:45:17 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/27 21:46:15 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 13:03:54 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void			draw_width(t_spf *esp)
 {
-	if (esp->zero && !esp->prcn && !esp->left)
+	if (esp->zero && !esp->prcn && esp->n_p && !esp->left)
+		esp->count += write(1, "0", 1);
+	else if (esp->zero && esp->n_p && !esp->left)
+		esp->count += write(1, "0", 1);
+	else if (esp->zero && !esp->h_p && !esp->left)
 		esp->count += write(1, "0", 1);
 	else
 		esp->count += write(1, " ", 1);

@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/27 21:51:12 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 16:39:00 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,13 @@ void	h_any_n(t_spf *esp, va_list *argp, char c)
 		nn = ft_itoa(va_arg(*argp, int));
 	else if (c == 'u')
 		nn = ft_itoa(va_arg(*argp, unsigned int));
-	else
-		nn = is_pnt_or_h(esp, va_arg(*argp, size_t), c);
+	else if (c == 'x' || c == 'X')
+		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned int), c);
+	else if (c == 'p')
+		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned long int), c);
 	fnn = nn;
 	esp->len = ft_strlen(nn);
-	if (is_negative(esp, &nn) && !esp->h_p && esp->zero && esp->negative--)
+	if (is_negative(esp, &nn) && (!esp->h_p || esp->n_p) && esp->zero && esp->negative--)
 		esp->count += write(1, "-", 1);
 	manage_width(esp, 0);
 	if (esp->negative)
