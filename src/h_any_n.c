@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 21:41:38 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/28 23:09:21 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	manage_chr(t_spf *esp, char *nn)
 	else if (esp->len > 0)
 		while (nn[++i])
 			esp->count += write(1, &nn[i], 1);
+}
+
+void	hash()
+{
+	return ;
 }
 
 void	h_any_n(t_spf *esp, va_list *argp, char c)
