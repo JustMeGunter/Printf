@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 18:47:01 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 20:16:47 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 21:26:01 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ void	sign_draw(t_spf *esp, int k, char *nn, char c)
 			esp->count += write(1, "+", 1);
 			esp->plus--;
 		}
+		if (esp->width < esp->len && esp->zero && esp->space && !esp->negative && !esp->plus)
+		{
+			esp->count += write(1, " ", 1);
+			esp->space--;
+		}
+		if (esp->width > esp->len && !esp->h_p && esp->zero && esp->space &&
+				!esp->negative && !esp->plus)
+		{
+			esp->count += write(1, " ", 1);
+			esp->space--;
+		}
 	}
 	else if (!k)
 	{
@@ -34,6 +45,8 @@ void	sign_draw(t_spf *esp, int k, char *nn, char c)
 			esp->count += write(1, "-", 1);
 		if (esp->plus && !esp->negative)
 			esp->count += write(1, "+", 1);
+		if (esp->space && !esp->negative && !esp->plus)
+			esp->count += write(1, " ", 1);
 		if (!(esp->h_w && esp->zero && !esp->h_p))
 			hash(esp, c, nn);
 	}
@@ -43,7 +56,12 @@ void	sign(t_spf *esp, char **nn, char c)
 {
 	if (is_negative(esp, nn) && (!esp->h_p || esp->n_p) && esp->zero &&
 			esp->negative--)
+	{
+		esp->space = 0;
 		esp->count += write(1, "-", 1);
+	}
+	if (esp->negative)
+		esp->space = 0;
 	if (esp->h_w && esp->zero && !esp->h_p)
 		hash(esp, c, *nn);
 	if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p &&
@@ -52,6 +70,14 @@ void	sign(t_spf *esp, char **nn, char c)
 	else if (esp->plus && esp->width > esp->len && !esp->negative && !esp->h_p)
 		esp->width--;
 	else if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p &&
+			esp->prcn > 0)
+		esp->width--;
+	if (esp->space && esp->width > esp->len && !esp->plus && !esp->negative && esp->h_p &&
+			esp->prcn == 0 && **nn != '0')
+		esp->width--;
+	else if (esp->space && esp->width > esp->len && !esp->plus && !esp->negative && !esp->h_p)
+		esp->width--;
+	else if (esp->space && esp->width > esp->len && !esp->plus && !esp->negative && esp->h_p &&
 			esp->prcn > 0)
 		esp->width--;
 	sign_draw(esp, 1, *nn, c);

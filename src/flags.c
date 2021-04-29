@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 17:41:41 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 15:42:56 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 21:14:09 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	flags(t_spf *esp)
 			esp->hash = 1;
 		if (esp->zero == 1 && esp->left == 1)
 			esp->zero = 0;
+		if (esp->plus == 1)
+			esp->space = 0;
 		esp->cnt++;
 	}
 }
