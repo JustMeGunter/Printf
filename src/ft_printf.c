@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 16:21:08 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 15:31:21 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 		esp->cnt = get_esp(format); 
 		if (esp->cnt)
 		{
-			zero_left(esp);
+			flags(esp);
 			width(esp, argp);
 			precision(esp, argp);
 		}

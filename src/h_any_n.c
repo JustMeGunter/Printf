@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 23:09:21 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 17:57:01 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,21 @@ void	manage_chr(t_spf *esp, char *nn)
 	i = -1;
 	if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0' && !esp->h_w)
 		esp->len = 0;
-	if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0' && esp->h_w && !esp->width)
+	if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0' &&
+			esp->h_w && !esp->width)
 		esp->len = 0;
-	if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0')
+	if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0' && !esp->plus)
 		esp->count += write(1, " ", 1);
+	else if (esp->len == 1 && esp->h_p && esp->prcn == 0 && *nn == '0' && esp->plus)
+		return ;
 	else if (esp->len > 0)
 		while (nn[++i])
 			esp->count += write(1, &nn[i], 1);
 }
 
-void	hash()
+char	*get_num(char c, va_list *argp, t_spf *esp)
 {
-	return ;
-}
-
-void	h_any_n(t_spf *esp, va_list *argp, char c)
-{
-	char		*nn;
-	char		*fnn;
+	char *nn;
 
 	if (c == 'i' || c == 'd')
 		nn = ft_itoa(va_arg(*argp, int));
@@ -75,15 +72,45 @@ void	h_any_n(t_spf *esp, va_list *argp, char c)
 		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned int), c);
 	else if (c == 'p')
 		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned long int), c);
+	return (nn);
+}
+
+void	h_any_n(t_spf *esp, va_list *argp, char c)
+{
+	char		*nn;
+	char		*fnn;
+
+	nn = get_num(c, argp, esp);
 	fnn = nn;
 	esp->len = ft_strlen(nn);
-	if (is_negative(esp, &nn) && (!esp->h_p || esp->n_p) && esp->zero && esp->negative--)
+	if (is_negative(esp, &nn) && (!esp->h_p || esp->n_p) && esp->zero &&
+			esp->negative--)
 		esp->count += write(1, "-", 1);
+	if (esp->h_w && esp->zero && !esp->h_p)
+		hash(esp, c, nn);
+	if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p && esp->prcn == 0 && *nn != '0')
+		esp->width--;
+	else if (esp->plus && esp->width > esp->len && !esp->negative && !esp->h_p)
+		esp->width--;
+	else if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p && esp->prcn > 0)
+		esp->width--;
+	if (esp->width < esp->len && esp->zero && esp->plus && !esp->negative)
+	{
+		esp->count += write(1, "+", 1);
+		esp->plus--;
+	}
+	if (esp->width > esp->len && !esp->h_p && esp->zero && esp->plus && !esp->negative)
+	{
+		esp->count += write(1, "+", 1);
+		esp->plus--;
+	}
 	manage_width(esp, 0);
 	if (esp->negative)
 		esp->count += write(1, "-", 1);
-	if (!(esp->len == 1 && *nn == '0') && esp->hash && (c == 'x' || c == 'X'))
-		esp->count += write(1, "0x", 2);
+	if (esp->plus && !esp->negative)
+		esp->count += write(1, "+", 1);
+	if (!(esp->h_w && esp->zero && !esp->h_p))
+		hash(esp, c, nn);
 	manage_precision(esp);
 	if (c == 'p')
 		esp->count += write(1, "0x", 2);

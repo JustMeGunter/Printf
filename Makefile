@@ -6,16 +6,17 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/04/28 21:12:15 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/04/29 15:20:59 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MSG					=
 
 SRC_DIR				=	src/
-SRC					=	ft_printf.c h_prc_char.c width.c precision.c zero_left.c\
+SRC					=	ft_printf.c h_prc_char.c width.c precision.c flags.c\
 						empty.c star.c draw_width.c  h_string.c h_any_n.c\
-						is_pnt_or_h.c draw_precision.c ft_itoa_base.c is_negative.c
+						is_pnt_or_h.c draw_precision.c ft_itoa_base.c is_negative.c\
+						hash.c
 
 BMAIN				=	bigMain.c
 TMAIN				=	testMain.c	
