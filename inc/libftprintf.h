@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 15:22:21 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 20:15:39 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int 	        star(t_spf *esp, va_list *argp);
 int				is_negative(t_spf *esp, char **nn);
 char			*is_pnt_or_h(t_spf *esp, long long unsigned int n, char c);
 void			hash(t_spf *esp, char c, char *nn);
+void			sign(t_spf *esp, char **nn, char c);
+void			sign_draw(t_spf *esp, int k, char *nn, char c);
 
 #endif

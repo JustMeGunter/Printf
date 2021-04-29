@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 17:57:01 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/04/29 20:14:55 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,34 +83,9 @@ void	h_any_n(t_spf *esp, va_list *argp, char c)
 	nn = get_num(c, argp, esp);
 	fnn = nn;
 	esp->len = ft_strlen(nn);
-	if (is_negative(esp, &nn) && (!esp->h_p || esp->n_p) && esp->zero &&
-			esp->negative--)
-		esp->count += write(1, "-", 1);
-	if (esp->h_w && esp->zero && !esp->h_p)
-		hash(esp, c, nn);
-	if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p && esp->prcn == 0 && *nn != '0')
-		esp->width--;
-	else if (esp->plus && esp->width > esp->len && !esp->negative && !esp->h_p)
-		esp->width--;
-	else if (esp->plus && esp->width > esp->len && !esp->negative && esp->h_p && esp->prcn > 0)
-		esp->width--;
-	if (esp->width < esp->len && esp->zero && esp->plus && !esp->negative)
-	{
-		esp->count += write(1, "+", 1);
-		esp->plus--;
-	}
-	if (esp->width > esp->len && !esp->h_p && esp->zero && esp->plus && !esp->negative)
-	{
-		esp->count += write(1, "+", 1);
-		esp->plus--;
-	}
+	sign(esp, &nn, c);
 	manage_width(esp, 0);
-	if (esp->negative)
-		esp->count += write(1, "-", 1);
-	if (esp->plus && !esp->negative)
-		esp->count += write(1, "+", 1);
-	if (!(esp->h_w && esp->zero && !esp->h_p))
-		hash(esp, c, nn);
+	sign_draw(esp, 0, nn, c);	
 	manage_precision(esp);
 	if (c == 'p')
 		esp->count += write(1, "0x", 2);
