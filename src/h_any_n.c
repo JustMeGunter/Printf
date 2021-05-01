@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 20:14:55 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/01 19:43:37 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ char	*get_num(char c, va_list *argp, t_spf *esp)
 {
 	char *nn;
 
-	if (c == 'i' || c == 'd')
+	if (esp->length)
+		nn = h_lh(esp, argp, c);
+	else if (c == 'i' || c == 'd')
 		nn = ft_itoa(va_arg(*argp, int));
 	else if (c == 'u')
 		nn = ft_itoa(va_arg(*argp, unsigned int));
