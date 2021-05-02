@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:58:21 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/01 20:18:41 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/02 18:27:17 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int        main(int argc, char *argv[])
 	{
 		static char *s_hidden = "hi \0 lolololo \0";
     	printf("******************\n");
-		n = printf("this is >%hhi< number\n", 266);
+		n = printf(">%lld< number\n", 9223372036854775807ll);
     	printf("!!! %i !!!\n", n);
-		n = ft_printf("this is >%hhi< number\n", 266);
+		n = ft_printf(">%lld< number\n", 9223372036854775807ll);
     	printf("!!! %i !!!\n", n);
 	}
 	if (*argv[1] == '%')
