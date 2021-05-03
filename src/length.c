@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:03:27 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/01 20:14:37 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/02 20:21:31 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,26 @@
 
 char	*get_nnh(t_spf *esp, va_list *argp, char c)
 {
+	short f;
+	unsigned short var1;
+	unsigned char var2;
+	if ((c == 'u' && !ft_strncmp(esp->length, "h", ft_strlen(esp->length))) || ((c == 'x' || c == 'X') && !ft_strncmp(esp->length, "h", ft_strlen(esp->length))))
+		var1 = va_arg(*argp, int);
+	else if (((c == 'x' || c == 'X') && !ft_strncmp(esp->length, "hh", ft_strlen(esp->length))) ||
+			((c == 'x' || c == 'X') && !ft_strncmp(esp->length, "hh", ft_strlen(esp->length))))
+		var2 = va_arg(*argp, int);
 	if ((c == 'i' || c == 'd') && !ft_strncmp(esp->length, "h", ft_strlen(esp->length)))
-		return (ft_itoa(va_arg(*argp, short int)));	
+		return (ft_itoa(f = va_arg(*argp, int)));	
 	else if ((c == 'i' || c == 'd') && !ft_strncmp(esp->length, "hh", ft_strlen(esp->length)))
 		return (ft_itoa(va_arg(*argp, signed char)));
 	else if (c == 'u' && !ft_strncmp(esp->length, "h", ft_strlen(esp->length)))
-		return (ft_itoa(va_arg(*argp, unsigned short int)));	
+		return (ft_itoa(var1));	
 	else if (c == 'u' && !ft_strncmp(esp->length, "hh", ft_strlen(esp->length)))
-		return (ft_itoa(va_arg(*argp, unsigned char)));
+		return (ft_itoa(var2));
 	else if ((c == 'x' || c == 'X') && !ft_strncmp(esp->length, "h", ft_strlen(esp->length)))
-		return (is_pnt_or_h(esp, va_arg(*argp, unsigned short int), c));	
+		return (is_pnt_or_h(esp, var1, c));	
 	else if ((c == 'x' || c == 'X') && !ft_strncmp(esp->length, "hh", ft_strlen(esp->length)))
-		return (is_pnt_or_h(esp, va_arg(*argp, unsigned char), c));
+		return (is_pnt_or_h(esp, var2, c));
 	else
 		return (0);
 }
