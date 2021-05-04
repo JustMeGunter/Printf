@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 18:30:12 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/01 16:52:01 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:13:06 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 char	*get_esp(const char **format)
 {
-	char *aux;
+	char	*aux;
 
 	if (!ft_strchrs(*format + 1, "%cdisxXpu"))
 		return (0);
-	aux = ft_substr(*format, 1, ft_strlen(*format) - 
-			ft_strlen(ft_strchrs(*format + 1, "%cdisxXpu")));
+	aux = ft_substr(*format, 1, ft_strlen(*format)
+			- ft_strlen(ft_strchrs(*format + 1, "%cdisxXpu")));
 	*format = *format + ft_strlen(aux);
 	return (aux);
 }
@@ -31,7 +31,7 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 
 	if (**format == '%')
 	{
-		esp->cnt = get_esp(format); 
+		esp->cnt = get_esp(format);
 		if (esp->cnt)
 		{
 			flags(esp);
@@ -46,8 +46,8 @@ void	h_trigger(const char **format, va_list *argp, t_spf *esp)
 			h_prc_char(esp, argp, *t_end);
 		else if (*t_end == 's')
 			h_string(esp, argp);
-		else if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x' || *t_end == 'X' ||
-				*t_end == 'u' || *t_end == 'p')
+		else if (*t_end == 'i' || *t_end == 'd' || *t_end == 'x'
+			|| *t_end == 'X' || *t_end == 'u' || *t_end == 'p')
 			h_any_n(esp, argp, *t_end);
 	}
 	else

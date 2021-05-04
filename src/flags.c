@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 17:41:41 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 21:14:09 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:01:02 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	flags(t_spf *esp)
 {
-	while (*esp->cnt == '0' || *esp->cnt == '-' ||  *esp->cnt == '+' ||
-			*esp->cnt == ' ' || *esp->cnt == '#')
+	while (*esp->cnt == '0' || *esp->cnt == '-' || *esp->cnt == '+'
+		|| *esp->cnt == ' ' || *esp->cnt == '#')
 	{
 		if (*esp->cnt == '0')
 			esp->zero = 1;

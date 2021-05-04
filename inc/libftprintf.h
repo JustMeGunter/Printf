@@ -6,12 +6,12 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/01 20:15:11 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 18:50:46 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINRF_H
-# define LIBPRINRF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 # include <libft.h>
 # include <stdarg.h>
 # include <stdio.h>
@@ -19,8 +19,7 @@
 # define ELM_BASE "0123456789abcdefghijklmnopqrstuvwxyz"
 # define ELM_BASE_UP "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-
-typedef struct		s_spf
+typedef struct s_spf
 {
 	char			*cnt;
 	char			*length;
@@ -30,7 +29,7 @@ typedef struct		s_spf
 	int				count;
 	int				h_p;
 	int				prcn;
-	int				len; 
+	int				len;
 	int				n_p;
 	int				h_w;
 	int				negative;
@@ -48,16 +47,14 @@ void			flags(t_spf *esp);
 void			draw_precision(t_spf *esp);
 void			width(t_spf *esp, va_list *argp);
 void			empty(t_spf *esp);
-void            h_string(t_spf *esp, va_list *argp);
-int 	        star(t_spf *esp, va_list *argp);
+void			h_string(t_spf *esp, va_list *argp);
+int				star(t_spf *esp, va_list *argp);
 int				is_negative(t_spf *esp, char **nn);
 char			*is_pnt_or_h(t_spf *esp, long long unsigned int n, char c);
 void			hash(t_spf *esp, char c, char *nn);
 void			sign(t_spf *esp, char **nn, char c);
 void			sign_draw(t_spf *esp, int k, char *nn, char c);
 void			length(t_spf *esp);
-char			*get_nnl(t_spf *esp, va_list *argp, char c);
-char			*get_nnh(t_spf *esp, va_list *argp, char c);
 char			*h_lh(t_spf *esp, va_list *argp, char c);
 
 #endif

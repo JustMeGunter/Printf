@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 13:24:40 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/29 13:29:05 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:20:12 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	hash(t_spf *esp, char c, char *nn)
 			esp->count += write(1, "0X", 2);
 	}
 	return ;
-}
-	
+}	

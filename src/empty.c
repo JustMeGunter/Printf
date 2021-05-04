@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:02:13 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/03 21:17:52 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 15:59:00 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			empty(t_spf *esp)
+void	empty(t_spf *esp)
 {
 	int		auxcount;
 

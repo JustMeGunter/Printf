@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:01:30 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/27 19:40:42 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:26:37 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			precision(t_spf *esp, va_list *argp)
+void	precision(t_spf *esp, va_list *argp)
 {
 	if (*esp->cnt == '.')
 	{

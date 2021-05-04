@@ -6,13 +6,13 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:00:37 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/27 16:04:51 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:27:56 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 
-void			width(t_spf *esp, va_list *argp)
+void	width(t_spf *esp, va_list *argp)
 {
 	esp->width = star(esp, argp);
 	if (!esp->h_w && *esp->cnt != '.')

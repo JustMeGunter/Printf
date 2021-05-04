@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 20:02:11 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/28 13:11:55 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:20:53 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_negative(t_spf *esp, char **nn)
 			esp->len--;
 			esp->width--;
 		}
-		else if (esp->width ==  esp->prcn && esp->h_p)
+		else if (esp->width == esp->prcn && esp->h_p)
 			esp->len--;
 		if (esp->h_p && esp->prcn > esp->width)
 			esp->prcn++;

@@ -6,19 +6,19 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 20:12:02 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/04/25 13:12:00 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/04 16:17:57 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h> 
 #include <stdio.h>
 
-void			h_prc_char(t_spf *esp, va_list *argp, char percent)
+void	h_prc_char(t_spf *esp, va_list *argp, char percent)
 {
-	int         i;
-	char		character;
+	int		i;
+	char	character;
 
-    i = -1;
+	i = -1;
 	if (percent != '%')
 		character = va_arg(*argp, int);
 	else
