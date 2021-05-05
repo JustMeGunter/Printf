@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:52:15 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/04 18:50:46 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/05 20:53:34 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void			sign(t_spf *esp, char **nn, char c);
 void			sign_draw(t_spf *esp, int k, char *nn, char c);
 void			length(t_spf *esp);
 char			*h_lh(t_spf *esp, va_list *argp, char c);
+void			fncn(va_list *argp, t_spf *esp);
 
 #endif
