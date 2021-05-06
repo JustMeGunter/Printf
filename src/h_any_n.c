@@ -6,7 +6,7 @@
 /*   By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 19:41:03 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/06 19:22:12 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/06 19:42:36 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ static char	*get_num(char c, va_list *argp, t_spf *esp)
 		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned int), c);
 	else if (c == 'p')
 		nn = is_pnt_or_h(esp, va_arg(*argp, unsigned long int), c);
+	else
+		return (0);
 	return (nn);
 }
 

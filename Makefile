@@ -6,7 +6,7 @@
 #    By: acrucesp <acrucesp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 20:43:09 by acrucesp          #+#    #+#              #
-#    Updated: 2021/05/05 20:54:13 by acrucesp         ###   ########.fr        #
+#    Updated: 2021/05/06 19:39:04 by acrucesp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ CC					=	gcc
 
 RM					= 	rm -f
 
-//CFLAGS				= 	-Wall -Wextra -Werror -g 
-CFLAGS				= 	-g 
+CFLAGS				= 	-Wall -Wextra -Werror -g 
 
 all:				$(NAME)
 

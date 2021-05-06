@@ -6,13 +6,13 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 18:47:01 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/04 18:39:46 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/06 19:43:21 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libftprintf.h>
 
-static void	draw_before(t_spf *esp, char *nn)
+static void	draw_before(t_spf *esp)
 {
 	if (esp->width < esp->len && esp->zero && esp->plus && !esp->negative)
 	{
@@ -54,7 +54,7 @@ static void	draw_after(t_spf *esp, char *nn, char c)
 void	sign_draw(t_spf *esp, int k, char *nn, char c)
 {
 	if (k)
-		draw_before(esp, nn);
+		draw_before(esp);
 	else if (!k)
 		draw_after(esp, nn, c);
 }
