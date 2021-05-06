@@ -11,3 +11,4 @@ Simulate Printf.
 
 ### COMPILATION
 
+- Just run `make`. This makes a static library name `libftprintf.a`.
