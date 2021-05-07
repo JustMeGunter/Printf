@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 20:28:31 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/05 21:06:06 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/07 16:35:50 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	fncn(va_list *argp, t_spf *esp)
 				*(signed char *)va_arg(*argp, int *) = esp->count;
 		}
 	}
-	else
+	else if (*esp->cnt == 'n')
 		*va_arg(*argp, int *) = esp->count;
+	else
+		return ;
 }
