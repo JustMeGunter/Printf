@@ -6,7 +6,7 @@
 /*   By: acrucesp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 17:03:27 by acrucesp          #+#    #+#             */
-/*   Updated: 2021/05/06 19:17:52 by acrucesp         ###   ########.fr       */
+/*   Updated: 2021/05/09 09:06:27 by acrucesp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ void	length(t_spf *esp)
 {
 	if (ft_strchrs(esp->cnt, "lh"))
 	{
-		if (ft_strnstr(esp->cnt, "l", ft_strlen(esp->cnt)))
-			esp->length = ft_strdup("l");
-		else if (ft_strnstr(esp->cnt, "ll", ft_strlen(esp->cnt)))
+		if (ft_strnstr(esp->cnt, "ll", ft_strlen(esp->cnt)))
 			esp->length = ft_strdup("ll");
-		else if (ft_strnstr(esp->cnt, "h", ft_strlen(esp->cnt)))
-			esp->length = ft_strdup("h");
+		else if (ft_strnstr(esp->cnt, "l", ft_strlen(esp->cnt)))
+			esp->length = ft_strdup("l");
 		else if (ft_strnstr(esp->cnt, "hh", ft_strlen(esp->cnt)))
 			esp->length = ft_strdup("hh");
+		else if (ft_strnstr(esp->cnt, "h", ft_strlen(esp->cnt)))
+			esp->length = ft_strdup("h");
 		else
 			return ;
 		if (ft_strlen(esp->length) > 1)
